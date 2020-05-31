@@ -5,7 +5,9 @@ const robots = {
 }
 
 async function start(){
-    const content = {}
+    const content = {
+       maxSentences: 10
+    }
 
     content.search = {"articleName": `${askAndReturnSearchTerm()}`, "lang": `${askAndReturnLanguage()}`}
     content.prefix = askAndReturnPrefix()
@@ -33,7 +35,7 @@ async function start(){
         return selectedLanguageText
     }
 
-    console.log(content)
+    console.log(JSON.stringify(content, null, 4))
 }
 
 start()
